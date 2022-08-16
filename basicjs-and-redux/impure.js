@@ -3,11 +3,13 @@ const state = {
 };
 
 
-function impure(){
-    state.value = 6;
+function impure(val){
+    state.value = state.value * val;
 }
 
 
-impure();
+impure(2);
 
+console.log(state.value);
+impure(2);
 console.log(state.value);
