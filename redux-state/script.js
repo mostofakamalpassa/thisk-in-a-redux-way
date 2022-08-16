@@ -17,7 +17,7 @@ const increment = (value)=>{
         type:INCREMENT_ACTION, // mandatory 
         count:value
 
-    }
+    } 
 }
 
 const decrement = (value) =>{
