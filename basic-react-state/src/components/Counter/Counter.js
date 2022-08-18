@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import {connect} from 'react-redux';
+import { increment, decrement } from '../../redux/counter/actions';
 
-const Counter = () => {
-    const [counter, setCounter] = useState(0);
+const Counter = ({count, increment, decrement}) => {
+    // const [counter, setCounter] = useState(0);
 
-    const handleCounterIncrement = ()=>{
-        setCounter(counter + 1);
-    }
+    // const handleCounterIncrement = ()=>{
+    //     setCounter(counter + 1);
+    // }
 
-    const handleCounterDecrement = () =>{
-        setCounter(counter -1);
-    }
+    // const handleCounterDecrement = () =>{
+    //     setCounter(counter -1);
+    // }
 
     return (
         <div className="w-screen  p-10 bg-gray-100 text-slate-700">
@@ -28,13 +30,15 @@ const Counter = () => {
                     <button
                         className="bg-indigo-400 text-white px-3 py-2 rounded shadow"
                         
-                        onClick={handleCounterIncrement}
+                        // onClick={handleCounterIncrement}
+                        onClick={increment}
                     >
                         Increment
                     </button>
                     <button
                         className="bg-red-400 text-white px-3 py-2 rounded shadow"
-                        onClick={handleCounterDecrement}
+                        // onClick={handleCounterDecrement}
+                        onClick={decrement}
                     >
                         Decrement
                     </button>
@@ -45,4 +49,20 @@ const Counter = () => {
     );
 };
 
-export default Counter;
+// export default Counter;
+ const mapStateToProps = (state) =>{
+        return{
+            count:state.value
+        }
+ }
+
+
+ const mapDispatchToProps = (dispatch) =>{
+    return{
+        increment: (value) => dispatch(increment(value)),
+        decrement: (value) => dispatch(decrement(value)),
+    }
+ }
+
+
+connect(mapStateToProps, mapDispatchToProps)(Counter)
