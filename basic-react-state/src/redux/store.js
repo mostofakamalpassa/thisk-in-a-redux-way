@@ -1,7 +1,7 @@
 import {createStore} from 'redux'
-import counterReducer from './counter/counterReducer'
+import combineReducer from './rootReducer';
 
-const store = createStore(counterReducer);
+const store = createStore(combineReducer);
 
 
 
