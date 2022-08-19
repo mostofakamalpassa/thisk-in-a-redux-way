@@ -3,7 +3,7 @@ import {DYNAMIC_INCREMENT, DYNAMIC_DECREMENT} from './actionTypes';
 
 //  increment action Creator 
 
-const dynamicCounterIncrement = (value)=>{
+export const dynamicCounterIncrement = (value)=>{
 
     return{
         type:DYNAMIC_INCREMENT,
@@ -13,11 +13,13 @@ const dynamicCounterIncrement = (value)=>{
 
 //  decrement action Creator 
 
-const dynamicCounterDecrement = (value)=>{
+export const dynamicCounterDecrement = (value)=>{
 
     return{
         type:DYNAMIC_DECREMENT,
         payload: value
     }
 }
+
+ 
 

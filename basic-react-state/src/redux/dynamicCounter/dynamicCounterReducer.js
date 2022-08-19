@@ -5,7 +5,7 @@ const initialState = {
 }
 
  const dynamicCounterReducer = (state = initialState, action)=>{
-    switch(action){
+    switch(action.type){
 
         case DYNAMIC_INCREMENT:
             return{

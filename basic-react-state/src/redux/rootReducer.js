@@ -4,8 +4,8 @@ import dynamicCounterReducer from "./dynamicCounter/dynamicCounterReducer";
 
 
 const combineReducer = combineReducers({
-    counterReducer : counterReducer,
-    dynamicCounterReducer : dynamicCounterReducer
+    counter : counterReducer,
+    dynamicCounter : dynamicCounterReducer
 })
 
 export default combineReducer;
