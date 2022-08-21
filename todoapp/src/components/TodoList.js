@@ -1,4 +1,5 @@
 import React from 'react';
+// import cancel from '../assets/images/cancel.png'
 
 const TodoList = () => {
     return (
@@ -37,7 +38,7 @@ const TodoList = () => {
         ></div>
 
         <img
-            src="./images/cancel.png"
+            src="assets/images/cancel.png"
             className="flex-shrink-0 w-4 h-4 ml-2 cursor-pointer"
             alt="Cancel"
         />
