@@ -6,7 +6,7 @@ const initalStatie = {
 }
 
 
-const reducer = (state = initalStatie, action) =>{
+const filterReducer = (state = initalStatie, action) =>{
         switch( action.type){
 
             case STATUS_CHANGED :
@@ -40,4 +40,4 @@ const reducer = (state = initalStatie, action) =>{
         }
 }
 
-export default reducer;
+export default filterReducer;
