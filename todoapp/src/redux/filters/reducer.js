@@ -2,7 +2,7 @@ import {STATUS_CHANGED, COLOR_CHANGED} from './actionTypes';
 
 const initalStatie = {
     status:'All',
-    color:['red','green']
+    color:[]
 }
 
 

@@ -14,7 +14,7 @@ export const colorChanged = (color, changeType)=>{
 
 export const statusChanged = (status)=>{
     return{
-        type:COLOR_CHANGED,
+        type:STATUS_CHANGED,
         payload:{
             status
         }
