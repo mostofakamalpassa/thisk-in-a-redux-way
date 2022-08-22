@@ -2,7 +2,7 @@ import {STATUS_CHANGED, COLOR_CHANGED} from './actionTypes';
 
 const initalStatie = {
     status:'All',
-    color:[]
+    colors:[]
 }
 
 
@@ -21,10 +21,7 @@ const filterReducer = (state = initalStatie, action) =>{
                         case 'added':
                             return{
                                 ...state,
-                                colors:[
-                                    ...state.colors,
-                                    color
-                                ]
+                                colors:[...state.colors, color ]
                             }
                         case 'removed':
                             return{

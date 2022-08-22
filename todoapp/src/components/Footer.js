@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {statusChanged} from '../redux/filters/actionCreator';
+import {statusChanged,colorChanged} from '../redux/filters/actionCreator';
 
 
 const numberOfTodos = (no_of_todos)  =>{
@@ -25,6 +25,15 @@ const Footer = () => {
     const filters = useSelector(state => state.filters)
 const {status, colors} = filters;
 
+const handleColorChanged = (color) =>{
+
+    // if(colors?.includes(color)){
+    //     dispatch(colorChanged(color, 'removed'));
+    // }else{
+    //     dispatch(colorChanged(color, 'added'));
+    // }
+}
+
 
     return (
         <div className="mt-4 flex justify-between text-xs text-gray-500">
@@ -39,13 +48,13 @@ const {status, colors} = filters;
             <li></li>
             <li
                 className="h-3 w-3 border-2 border-green-500 md:hover:bg-green-500 rounded-full cursor-pointer bg-green-500"
-            ></li>
+             onClick={handleColorChanged('green')}></li>
             <li
                 className="h-3 w-3 border-2 border-red-500 md:hover:bg-red-500 rounded-full cursor-pointer"
-            ></li>
+                onClick={handleColorChanged('red')}></li>
             <li
                 className="h-3 w-3 border-2 border-yellow-500 md:hover:bg-yellow-500 rounded-full cursor-pointer"
-            ></li>
+                onClick={handleColorChanged('yellow')}></li>
         </ul>
     </div>
     );
