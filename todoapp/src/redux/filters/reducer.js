@@ -1,9 +1,6 @@
 import {STATUS_CHANGED, COLOR_CHANGED} from './actionTypes';
 
-const initalStatie = {
-    status:'All',
-    colors:[]
-}
+import initalStatie from './initialState';
 
 
 const filterReducer = (state = initalStatie, action) =>{
