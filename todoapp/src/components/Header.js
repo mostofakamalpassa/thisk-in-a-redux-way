@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import {useDispatch} from 'react-redux';
+import {added} from '../redux/todos/actionCreator';
+
 
 const Header = () => {
+  const [input, setInput] = useState('');
+  const dispatch = useDispatch();
+
+  const handleInput = ( e)=>{
+      setInput(e.target.value);
+  }
+
+  const handleFormSubmit = (e) =>{
+      e.preventDefault();
+      dispatch(added(input));
+      setInput("");
+  }
   return (
     <div>
-      <form className="flex items-center bg-gray-100 px-4 py-4 rounded-md">
+      <form onSubmit={handleFormSubmit} className="flex items-center bg-gray-100 px-4 py-4 rounded-md">
         <img src="/assets/images/notes.jpg" className="w-6 h-6" alt="Add todo" />
         <input
           type="text"
           placeholder="Type your todo"
+          value={input}
+          onChange={handleInput}
           className="w-full text-lg px-4 py-1 border-none outline-none bg-gray-100 text-gray-500"
         />
         <button
